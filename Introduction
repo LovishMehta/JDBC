@@ -1,0 +1,31 @@
+JDBC refers to Java Data Base Connectivity
+To connect java application with the Database we require connectivity and the concept of connecting java with the database is called JDBC.
+JDBC is a Java API to connect and execute the query with the database.
+So whenever you want to connect java with the database you require driver
+
+There are four types of JDBC drivers:
+-> JDBC-ODBC Bridge Driver,
+-> Native Driver,
+-> Network Protocol Driver, and
+-> Thin Driver
+
+We can use JDBC API to access tabular data stored in any relational database. By the help of JDBC API, we can save, update, delete and fetch data from the database.
+
+1) Import the package (java.sql.*)
+2) Load and Register the Driver
+   a) Load (the driver)
+   b) Register (Class.forName("com.mysql.jdbcDriver")
+3) Establish the Connection  (Connection con = DriverManager.getConnection("URL","UserName","Password")) //Connection is an interface
+4) Create the statement -> Statement (Statement st = con.cretaeStatement;) //Statement is an interface 
+                        -> Prpeared Statement
+                        -> Collable Statement
+5) Establish the Query (Result rs = st.executeQuery("Select * from student");      //quesry is for fetching the value
+6) Process Result     (while(rs.next()){
+                       sout(rs.getInt(1)+" "+rs.getString(2)); } )
+7) Close              st.close()
+                      con.close()
+                      
+In Sql we have
+1) DDL: whenever we create strucuture of a table that's DDL
+2) DML: whenever you want to insert and delete the values it's manuplation(DML)
+3) DQL: whenever we want to fire the query for fetching the values there's DQL 
